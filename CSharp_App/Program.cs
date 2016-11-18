@@ -6,14 +6,46 @@ using System.Threading.Tasks;
 
 namespace CSharp_App
 {
+    public class Person
+    {
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public int age { get; set; }
+
+        public string AgeOfMajority(int age)
+        {
+            if (age >= 18)
+                return "You are of legal age!";
+            else
+                return "You are not of legal age!";
+        }
+    }
+
     class Program
     {
+        //method is static because I am calling it from the static method Main
+        public static void SumTwoNumbers(int number1, int number2)
+        {
+            Console.WriteLine(number1 + " + " + number2 + " = " + (number1 + number2));
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Person p = new Person();
+            p.firstName = "Alex";
+            p.lastName = "Wilson";
+            Console.Write("How old are you? ");
+            p.age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(p.AgeOfMajority(p.age));
+            Console.WriteLine($"Hi, my name is {p.firstName} {p.lastName} {p.age}");
+            Console.WriteLine("Hi, my name is {0} {1} {2} years old.", p.firstName, p.lastName, p.age);
+            Console.WriteLine("Hi, my name is " + p.firstName + " " + p.lastName + ". I am " + p.age + "years old");
+
+            
+                        Console.WriteLine("Hello World");
             int a = 10, b = 5;
-            int sum = a + b;
-            Console.WriteLine("sum is:" + (a + b));
+            SumTwoNumbers(a, b);
+           // Console.WriteLine("sum is:" + (a + b));
             Console.WriteLine("Concatenated:" + a + b);
             Console.WriteLine("Increment a:" + ++a);
             string str1 = "    Learning C# with Ferrari.!";
@@ -51,35 +83,41 @@ namespace CSharp_App
             }
 
             Console.WriteLine("Type a number 1 - 7 to see the day of the week corresponding to this number:"); //Converting string to Int32.
-            int numberDayOfWeek = Convert.ToInt32(Console.ReadLine());
-            switch (numberDayOfWeek) //Checking the number the user typed.
+            try // Exception handling
             {
-                case 1:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Sunday!");
-                    break;
-                case 2:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Monday!");
-                    break;
-                case 3:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Tuesday!");
-                    break;
-                case 4:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Wednesday!");
-                    break;
-                case 5:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Thursday!");
-                    break;
-                case 6:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Friday!");
-                    break;
-                case 7:
-                    Console.WriteLine("The day number " + numberDayOfWeek + " is Saturday!");
-                    break;
-                default:
-                    Console.WriteLine("This number is invalid.");
-                    break;
+                int numberDayOfWeek = Convert.ToInt32(Console.ReadLine());
+                switch (numberDayOfWeek) //Checking the number the user typed.
+                {
+                    case 1:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Sunday!");
+                        break;
+                    case 2:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Monday!");
+                        break;
+                    case 3:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Tuesday!");
+                        break;
+                    case 4:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Wednesday!");
+                        break;
+                    case 5:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Thursday!");
+                        break;
+                    case 6:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Friday!");
+                        break;
+                    case 7:
+                        Console.WriteLine("The day number " + numberDayOfWeek + " is Saturday!");
+                        break;
+                    default:
+                        Console.WriteLine("This number is invalid.");
+                        break;
+                }
             }
-
+            catch (Exception)
+            {
+                Console.WriteLine("This is not a number!");
+            }
             string[] names = new string[3];// t[] numbers = new int[5] {10, 20, 30, 40, 50} for array initialization
             names[0] = "Davis";
             names[1] = "Matt";
