@@ -1,0 +1,6 @@
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\bin\Debug\CSharp_App.exe.config
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\bin\Debug\CSharp_App.exe
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\bin\Debug\CSharp_App.pdb
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\obj\Debug\CSharp_App.csprojResolveAssemblyReference.cache
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\obj\Debug\CSharp_App.exe
+c:\users\aaror\documents\visual studio 2015\Projects\CSharp_App\CSharp_App\obj\Debug\CSharp_App.pdb
